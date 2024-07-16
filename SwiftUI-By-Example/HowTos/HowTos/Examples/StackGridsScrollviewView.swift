@@ -40,7 +40,9 @@ struct StackGridsScrollviewView: View {
                     Toggle(isOn: $lazyGrids, label: { Text("Lazy Grids") })
                     Toggle(isOn: $tableYScrollBehaviour, label: { Text("Table & Scroll Behaviour") })
                 }
-            }.padding(.bottom)
+            }
+            .padding(.bottom, 8)
+            Divider()
             if simple {
                 // Hacer disitincion entre elementos con divider
                 // Por default se alinean en el centro

@@ -64,7 +64,9 @@ struct UserInterfaceControlsView: View {
                     Toggle(isOn: $multiDatePicker, label: { Text("MultiDate Picker") })
                     Toggle(isOn: $others, label: { Text("Otros") })
                 }
-            }.padding(.bottom)
+            }
+            .padding(.bottom, 8)
+            Divider()
             
             if simple {
                 // En su naturaleza de framework declarativo, en SwiftUI si declaramos una variable es inerte,

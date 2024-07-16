@@ -37,6 +37,8 @@ struct RespondingToEventsView: View {
                     Toggle(isOn: $dragAndDrop, label: { Text("Drag and Drop") })
                 }
             }
+            .padding(.bottom, 8)
+            Divider()
             if simple {
                 Text("Eventos")
                 // Detecta si la app se va al background o entra en el foreground
@@ -238,11 +240,15 @@ struct RespondingToEventsView: View {
                                     .frame(minWidth: 50, minHeight: 50)
                                     .background(.red)
                                     .foregroundStyle(.white)
-                                    .draggable(Image(systemName: sport))
+                                    .draggable(Image(systemName: sport)) {
+                                        // aca en este closure se puede cambiar el preview cuando se esta arrastrando
+                                        Label("figura del sport", systemImage: sport)
+                                    }
                             }
                         }
                     }
-                    
+                    // Cuando se arrastra un SF Symbol se pasa solo la data de pixeles, no el vector,
+                    // por lo que .font y otros modificadores no aplican en la Image droppeada
                     dropImage
                         .frame(width: 150, height:150)
                         .background(.green)

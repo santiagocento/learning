@@ -17,10 +17,10 @@ struct ContentView: View {
                 Row(name: "Stacks, Grids and Scrollviews", item: StackGridsScrollviewView())
                 Row(name: "User Interface Controls", item: UserInterfaceControlsView())
                 Row(name: "Responding To Events", item: RespondingToEventsView())
+                Row(name: "Taps and Gestures", item: TapsAndGesturesView())
             }
             .navigationTitle("Examples")
         }
-        .padding()
     }
 }
 

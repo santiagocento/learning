@@ -18,6 +18,7 @@
 		0147A3E62BC738750069D450 /* StackGridsScrollviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0147A3E52BC738750069D450 /* StackGridsScrollviewView.swift */; };
 		018CA97A2BD9AD5300A5840B /* RespondingToEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018CA9792BD9AD5300A5840B /* RespondingToEventsView.swift */; };
 		018CA97C2BDA93FD00A5840B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018CA97B2BDA93FD00A5840B /* AppDelegate.swift */; };
+		018CA99B2BDDE72600A5840B /* TapsAndGesturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		0147A3E52BC738750069D450 /* StackGridsScrollviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackGridsScrollviewView.swift; sourceTree = "<group>"; };
 		018CA9792BD9AD5300A5840B /* RespondingToEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespondingToEventsView.swift; sourceTree = "<group>"; };
 		018CA97B2BDA93FD00A5840B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapsAndGesturesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				0147A3E52BC738750069D450 /* StackGridsScrollviewView.swift */,
 				0123670E2BCEB61100188404 /* UserInterfaceControlsView.swift */,
 				018CA9792BD9AD5300A5840B /* RespondingToEventsView.swift */,
+				018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				018CA97C2BDA93FD00A5840B /* AppDelegate.swift in Sources */,
 				018CA97A2BD9AD5300A5840B /* RespondingToEventsView.swift in Sources */,
 				0123670F2BCEB61100188404 /* UserInterfaceControlsView.swift in Sources */,
+				018CA99B2BDDE72600A5840B /* TapsAndGesturesView.swift in Sources */,
 				012DCB3E2BB5CCEF00FC3A17 /* ImagesShapesMediaView.swift in Sources */,
 				012DCB402BB8537B00FC3A17 /* LayoutViews.swift in Sources */,
 				012DCB2E2BB5B62200FC3A17 /* HowTosApp.swift in Sources */,
