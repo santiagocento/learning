@@ -134,7 +134,6 @@ struct StackGridsScrollviewView: View {
                 // MARK: ScrollViewReader
                 // Usar scrollTo() para moverlo solo a una posicion programáticamente
                 // Tambien funciona con listas
-                // Se puede usar tambien en listas
                 ScrollViewReader { value in
                     ScrollView {
                         Button("Jump to #2") {

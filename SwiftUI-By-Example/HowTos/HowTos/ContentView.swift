@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var bindingValue = 0
+    
     var body: some View {
         NavigationStack {
             List {
@@ -18,9 +20,11 @@ struct ContentView: View {
                 Row(name: "User Interface Controls", item: UserInterfaceControlsView())
                 Row(name: "Responding To Events", item: RespondingToEventsView())
                 Row(name: "Taps and Gestures", item: TapsAndGesturesView())
+                Row(name: "Handling State", item: HandlingStateView(bindingValue: $bindingValue, observedObject: ObservableObj()))
             }
             .navigationTitle("Examples")
         }
+        .environmentObject(EnvironmentObj())
     }
 }
 
