@@ -305,7 +305,7 @@ private struct Variables {
     }
     
     static var date: AttributedString {
-        var date = Date.now.formatted(.dateTime.weekday(.wide).day().month(.wide).attributed)
+        var date = Date.now.formatted(.dateTime.weekday(.wide).day().month(.wide).attributedStyle)
         date.foregroundColor = .red
         
         let weekday = AttributeContainer.dateField(.weekday)

@@ -20,7 +20,9 @@ struct ContentView: View {
                 Row(name: "User Interface Controls", item: UserInterfaceControlsView())
                 Row(name: "Responding To Events", item: RespondingToEventsView())
                 Row(name: "Taps and Gestures", item: TapsAndGesturesView())
-                Row(name: "Handling State", item: HandlingStateView(bindingValue: $bindingValue, observedObject: ObservableObj()))
+                Row(name: "Handling State", item: HandlingStateView(bindingValue: $bindingValue,
+                                                                    bindableValue: BindableObject(),
+                                                                    observedObject: ObservableObj()))
             }
             .navigationTitle("Examples")
         }

@@ -8,28 +8,28 @@
 /*
  Property wrappers that are sources of truth
  These create and manage values directly:
-
-     @AppStorage
-     @FetchRequest
-     @GestureState
-     @Namespace
-     @NSApplicationDelegateAdaptor
-     @Published
-     @ScaledMetric
-     @SceneStorage
-     @State
-     @StateObject
-     @UIApplicationDelegateAdaptor
-
+ 
+ @AppStorage
+ @FetchRequest
+ @GestureState
+ @Namespace
+ @NSApplicationDelegateAdaptor
+ @Published
+ @ScaledMetric
+ @SceneStorage
+ @State
+ @StateObject
+ @UIApplicationDelegateAdaptor
+ 
  Property wrappers that are not sources of truth
  These get their values from somewhere else:
-
-     @Binding
-     @Environment
-     @EnvironmentObject
-     @FocusedBinding
-     @FocusedValue
-     @ObservedObject
+ 
+ @Binding
+ @Environment
+ @EnvironmentObject
+ @FocusedBinding
+ @FocusedValue
+ @ObservedObject
  */
 
 import SwiftUI
@@ -46,6 +46,11 @@ struct HandlingStateView: View {
     
     // Value type data owned by a different view
     @Binding var bindingValue: Int
+    
+    // Create bindings to the mutable properties of observable objects.
+    // This includes global variables, properties that exists outside of SwiftUI types, or even local variables.
+    // Use this same approach when you need a binding to a property of an observable object stored in a view’s environment.
+    @Bindable var bindableValue: BindableObject
     
     // Read data from the system, such as color scheme, accessibility options, and trait collections
     // You can add your own keys
@@ -73,6 +78,7 @@ struct HandlingStateView: View {
     
     // Refers to an instance of an external class that conforms to the ObservableObject protocol
     // This does not own its data
+    // Como @Binding pero para objetos
     @ObservedObject var observedObject: ObservableObj
     
     // Define numbers that should scale automatically according to the user’s Dynamic Type settings.
@@ -80,6 +86,16 @@ struct HandlingStateView: View {
     
     // Lets us save and restore small amounts of data for state restoration. This owns its data.
     @SceneStorage("text") var sceneStorageText = "sceneStorageText"
+    
+    @StateObject var manualStateUpdateObject: ManualStateUpdateObject = ManualStateUpdateObject()
+    
+    // Custom Bindings - No va a dejar que se pongan en ON los dos al mismo tiempo
+    @State private var firstToggle = false
+    @State private var secondToggle = false
+    
+    // Timer
+    @State var timeRemaining: Int = 20
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack {
@@ -116,11 +132,68 @@ struct HandlingStateView: View {
                 
                 // MARK: -
                 Image(systemName: "cloud.sun.bolt.fill")
-                            .resizable()
-                            .frame(width: imageSize, height: imageSize)
+                    .resizable()
+                    .frame(width: imageSize, height: imageSize)
                 // MARK: -
-                TextEditor(text: $sceneStorageText)
+                TextEditor(text: $sceneStorageText.onChange(customOnChange))
                     .textFieldStyle(.roundedBorder)
+                
+                // MARK: -
+                TextEditor(text: $bindableValue.property)
+                
+                // MARK: -
+                TextEditor(text: $manualStateUpdateObject.property)
+                    .textFieldStyle(.roundedBorder)
+                
+                // MARK: -
+                Toggle(isOn: .constant(true)) {
+                    Text("Show advanced options")
+                }
+                
+                // MARK: - Custom Bindings
+                let firstBinding = Binding(
+                    get: { self.firstToggle },
+                    set: {
+                        self.firstToggle = $0
+                        
+                        if $0 == true {
+                            self.secondToggle = false
+                        }
+                    }
+                )
+                
+                let secondBinding = Binding(
+                    get: { self.secondToggle },
+                    set: {
+                        self.secondToggle = $0
+                        
+                        if $0 == true {
+                            self.firstToggle = false
+                        }
+                    }
+                )
+                Toggle(isOn: firstBinding) {
+                    Text("First toggle")
+                }
+                
+                Toggle(isOn: secondBinding) {
+                    Text("Second toggle")
+                }
+                
+                // MARK: -
+                Text("\(timeRemaining)")
+                    .onReceive(timer) { input in
+                        if timeRemaining > 0 {
+                            timeRemaining -= 1
+                        }
+                    }
+                    
+                // MARK: -
+                AdaptiveView {
+                    Text("Some light View")
+                } dark: {
+                    Text("Some dark View")
+                }
             }
         }
         .padding()
@@ -132,12 +205,68 @@ struct HandlingStateView: View {
         .animation(.bouncy(duration: 0.3, extraBounce: 0.1), value: isExpanded)
         Spacer()
     }
+    
+    func customOnChange(value: String) {
+        print("custom on change \(value)")
+    }
 }
 
 #Preview {
     @Previewable @State var bindingValue = 0
-    HandlingStateView(bindingValue: $bindingValue, observedObject: ObservableObj())
-        .environmentObject(EnvironmentObj())
+    HandlingStateView(bindingValue: $bindingValue,
+                      bindableValue: BindableObject(),
+                      observedObject: ObservableObj())
+    .environmentObject(EnvironmentObj())
+}
+
+struct AdaptiveView<T: View, U: View>: View {
+    @Environment(\.colorScheme) var colorScheme
+    let light: T
+    let dark: U
+
+    init(light: T, dark: U) {
+        self.light = light
+        self.dark = dark
+    }
+
+    init(light: () -> T, dark: () -> U) {
+        self.light = light()
+        self.dark = dark()
+    }
+
+    @ViewBuilder var body: some View {
+        if colorScheme == .light {
+            light
+        } else {
+            dark
+        }
+    }
+}
+
+extension Binding {
+    func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
+        Binding(
+            get: { self.wrappedValue },
+            set: { newValue in
+                self.wrappedValue = newValue
+                handler(newValue)
+            }
+        )
+    }
+}
+
+class ManualStateUpdateObject: ObservableObject {
+    var property: String = "ManualStateUpdateObject" {
+        willSet {
+            print("ManualStateUpdateObject.property willSet: \(newValue)")
+            objectWillChange.send()
+        }
+    }
+}
+
+@Observable
+class BindableObject {
+    var property: String = "BindableObject"
 }
 
 class EnvironmentObj: ObservableObject {
