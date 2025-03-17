@@ -23,6 +23,7 @@ struct ContentView: View {
                 Row(name: "Handling State", item: HandlingStateView(bindingValue: $bindingValue,
                                                                     bindableValue: BindableObject(),
                                                                     observedObject: ObservableObj()))
+                Row(name: "Lists", item: ListsView())
             }
             .navigationTitle("Examples")
         }

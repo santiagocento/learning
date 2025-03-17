@@ -121,9 +121,9 @@ struct HandlingStateView: View {
                 // MARK: -
                 VStack {
                     if isExpanded {
-                        DetailView(isExpanded: $isExpanded, namespace: animationNamespace)
+                        NamespaceExampleDetailView(isExpanded: $isExpanded, namespace: animationNamespace)
                     } else {
-                        ListView(isExpanded: $isExpanded, namespace: animationNamespace)
+                        NamespaceExampleView(isExpanded: $isExpanded, namespace: animationNamespace)
                     }
                 }
                 .animation(.bouncy(duration: 0.3, extraBounce: 0.2), value: isExpanded)
@@ -280,7 +280,7 @@ class ObservableObj: ObservableObject {
     @Published var property: String = "Published Property"
 }
 
-struct ListView: View { // Requerido para ejemplo de @Namespace
+struct NamespaceExampleView: View { // Requerido para ejemplo de @Namespace
     @Binding var isExpanded: Bool
     var namespace: Namespace.ID
     
@@ -301,7 +301,7 @@ struct ListView: View { // Requerido para ejemplo de @Namespace
     }
 }
 
-struct DetailView: View { // Requerido para ejemplo de @Namespace
+struct NamespaceExampleDetailView: View { // Requerido para ejemplo de @Namespace
     @Binding var isExpanded: Bool
     var namespace: Namespace.ID
     

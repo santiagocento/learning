@@ -66,10 +66,14 @@ struct TextsView: View {
                     .fontWidth(.condensed)
                 
                 // 2 modificadores de espaciado de caracteres tracking y kerning
-                Text("Tracking text")
-                    .tracking(15)
-                Text("Kerning text")
-                    .kerning(15)
+                Text("Prueba - Tracking text")
+                    .tracking(10)
+                Text("Prueba - Kerning text")
+                    .kerning(10)
+                Text("Prueba - Tracking text")
+                    .tracking(-2)
+                Text("Prueba - Kerning text")
+                    .kerning(-2)
                 
                 Text("Truncation mode middle: " + Variables.loremIpsum)
                     .lineLimit(1)
@@ -184,12 +188,12 @@ struct TextsView: View {
                 
                 VStack(alignment: .center) {
                     switch redactingReason {
-                        case .invalidated:
-                            Text("Invalidated...").redacted(reason: .invalidated)
-                        case .placeholder:
-                            Text("Placeholder...").redacted(reason: .placeholder)
-                        case .privacy:
-                            Text("Privacy...").redacted(reason: .privacy)
+                    case .invalidated:
+                        Text("Invalidated...").redacted(reason: .invalidated)
+                    case .placeholder:
+                        Text("Placeholder...").redacted(reason: .placeholder)
+                    case .privacy:
+                        Text("Privacy...").redacted(reason: .privacy)
                     }
                     Picker("Cambiar Reasons", selection: $redactingReason) {
                         ForEach(redactingReasons, id: \.self) { reason in
@@ -238,8 +242,9 @@ struct TextsView: View {
                 .textSelection(.enabled)
             }
         }
-        .padding()
+        .scrollContentBackground(.hidden)
     }
+    
 }
 
 

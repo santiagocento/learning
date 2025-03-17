@@ -19,6 +19,7 @@
 		018CA97A2BD9AD5300A5840B /* RespondingToEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018CA9792BD9AD5300A5840B /* RespondingToEventsView.swift */; };
 		018CA97C2BDA93FD00A5840B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018CA97B2BDA93FD00A5840B /* AppDelegate.swift */; };
 		018CA99B2BDDE72600A5840B /* TapsAndGesturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */; };
+		2FBA6D0D2CFA7ECC00D5E573 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */; };
 		3A53F6062CE782E00093CF57 /* HandlingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53F6052CE782D40093CF57 /* HandlingState.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		018CA9792BD9AD5300A5840B /* RespondingToEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespondingToEventsView.swift; sourceTree = "<group>"; };
 		018CA97B2BDA93FD00A5840B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapsAndGesturesView.swift; sourceTree = "<group>"; };
+		2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		3A53F6052CE782D40093CF57 /* HandlingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				018CA9792BD9AD5300A5840B /* RespondingToEventsView.swift */,
 				018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */,
 				3A53F6052CE782D40093CF57 /* HandlingState.swift */,
+				2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				0147A3E62BC738750069D450 /* StackGridsScrollviewView.swift in Sources */,
 				012DCB3C2BB5B63B00FC3A17 /* TextsView.swift in Sources */,
 				018CA97C2BDA93FD00A5840B /* AppDelegate.swift in Sources */,
+				2FBA6D0D2CFA7ECC00D5E573 /* ListsView.swift in Sources */,
 				018CA97A2BD9AD5300A5840B /* RespondingToEventsView.swift in Sources */,
 				0123670F2BCEB61100188404 /* UserInterfaceControlsView.swift in Sources */,
 				018CA99B2BDDE72600A5840B /* TapsAndGesturesView.swift in Sources */,
@@ -316,7 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HowTos/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C6KH73DUUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -346,7 +350,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HowTos/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C6KH73DUUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
