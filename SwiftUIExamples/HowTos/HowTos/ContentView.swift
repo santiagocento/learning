@@ -24,6 +24,7 @@ struct ContentView: View {
                                                                     bindableValue: BindableObject(),
                                                                     observedObject: ObservableObj()))
                 Row(name: "Lists", item: ListsView())
+                Row(name: "Forms", item: ListsView())
             }
             .navigationTitle("Examples")
         }
