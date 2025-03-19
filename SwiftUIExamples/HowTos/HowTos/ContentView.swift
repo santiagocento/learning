@@ -24,7 +24,8 @@ struct ContentView: View {
                                                                     bindableValue: BindableObject(),
                                                                     observedObject: ObservableObj()))
                 Row(name: "Lists", item: ListsView())
-                Row(name: "Forms", item: ListsView())
+                Row(name: "Forms", item: FormsView())
+                Row(name: "Containers", item: NavTabAndGroupBoxView())
             }
             .navigationTitle("Examples")
         }

@@ -20,6 +20,7 @@
 		018CA97C2BDA93FD00A5840B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018CA97B2BDA93FD00A5840B /* AppDelegate.swift */; };
 		018CA99B2BDDE72600A5840B /* TapsAndGesturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */; };
 		2F81C4902D88CDA000881DAF /* FormsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C48F2D88CD9D00881DAF /* FormsView.swift */; };
+		2F81C4922D8ADF8000881DAF /* NavTabAndGroupBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C4912D8ADF8000881DAF /* NavTabAndGroupBoxView.swift */; };
 		2FBA6D0D2CFA7ECC00D5E573 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */; };
 		3A53F6062CE782E00093CF57 /* HandlingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53F6052CE782D40093CF57 /* HandlingState.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		018CA97B2BDA93FD00A5840B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapsAndGesturesView.swift; sourceTree = "<group>"; };
 		2F81C48F2D88CD9D00881DAF /* FormsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsView.swift; sourceTree = "<group>"; };
+		2F81C4912D8ADF8000881DAF /* NavTabAndGroupBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabAndGroupBoxView.swift; sourceTree = "<group>"; };
 		2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		3A53F6052CE782D40093CF57 /* HandlingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 				3A53F6052CE782D40093CF57 /* HandlingState.swift */,
 				2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */,
 				2F81C48F2D88CD9D00881DAF /* FormsView.swift */,
+				2F81C4912D8ADF8000881DAF /* NavTabAndGroupBoxView.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				0123670F2BCEB61100188404 /* UserInterfaceControlsView.swift in Sources */,
 				018CA99B2BDDE72600A5840B /* TapsAndGesturesView.swift in Sources */,
 				012DCB3E2BB5CCEF00FC3A17 /* ImagesShapesMediaView.swift in Sources */,
+				2F81C4922D8ADF8000881DAF /* NavTabAndGroupBoxView.swift in Sources */,
 				3A53F6062CE782E00093CF57 /* HandlingState.swift in Sources */,
 				012DCB402BB8537B00FC3A17 /* LayoutViews.swift in Sources */,
 				012DCB2E2BB5B62200FC3A17 /* HowTosApp.swift in Sources */,
