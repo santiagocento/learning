@@ -29,6 +29,7 @@ struct ContentView: View {
                 Row(name: "Navigation", item: NavigationExamplesView())
                 Row(name: "NavigationSplitViews", item: NavigationSplitViewExamples())
                 Row(name: "Alerts and Menus", item: AlertsAndMenusView())
+                Row(name: "Presenting Views", item: PresentingView())
             }
             .navigationTitle("Examples")
         }
