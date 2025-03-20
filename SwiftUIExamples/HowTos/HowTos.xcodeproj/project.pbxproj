@@ -21,6 +21,8 @@
 		018CA99B2BDDE72600A5840B /* TapsAndGesturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */; };
 		2F81C4902D88CDA000881DAF /* FormsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C48F2D88CD9D00881DAF /* FormsView.swift */; };
 		2F81C4922D8ADF8000881DAF /* NavTabAndGroupBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C4912D8ADF8000881DAF /* NavTabAndGroupBoxView.swift */; };
+		2F81C4942D8B20F800881DAF /* NavigationExamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C4932D8B20F800881DAF /* NavigationExamplesView.swift */; };
+		2F81C4962D8C98D200881DAF /* NavigationSplitViewExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C4952D8C98D200881DAF /* NavigationSplitViewExamples.swift */; };
 		2FBA6D0D2CFA7ECC00D5E573 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */; };
 		3A53F6062CE782E00093CF57 /* HandlingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53F6052CE782D40093CF57 /* HandlingState.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,8 @@
 		018CA99A2BDDE72600A5840B /* TapsAndGesturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapsAndGesturesView.swift; sourceTree = "<group>"; };
 		2F81C48F2D88CD9D00881DAF /* FormsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsView.swift; sourceTree = "<group>"; };
 		2F81C4912D8ADF8000881DAF /* NavTabAndGroupBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabAndGroupBoxView.swift; sourceTree = "<group>"; };
+		2F81C4932D8B20F800881DAF /* NavigationExamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExamplesView.swift; sourceTree = "<group>"; };
+		2F81C4952D8C98D200881DAF /* NavigationSplitViewExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSplitViewExamples.swift; sourceTree = "<group>"; };
 		2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		3A53F6052CE782D40093CF57 /* HandlingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +111,8 @@
 				2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */,
 				2F81C48F2D88CD9D00881DAF /* FormsView.swift */,
 				2F81C4912D8ADF8000881DAF /* NavTabAndGroupBoxView.swift */,
+				2F81C4932D8B20F800881DAF /* NavigationExamplesView.swift */,
+				2F81C4952D8C98D200881DAF /* NavigationSplitViewExamples.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -181,11 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F81C4942D8B20F800881DAF /* NavigationExamplesView.swift in Sources */,
 				012DCB302BB5B62200FC3A17 /* ContentView.swift in Sources */,
 				2F81C4902D88CDA000881DAF /* FormsView.swift in Sources */,
 				0147A3E62BC738750069D450 /* StackGridsScrollviewView.swift in Sources */,
 				012DCB3C2BB5B63B00FC3A17 /* TextsView.swift in Sources */,
 				018CA97C2BDA93FD00A5840B /* AppDelegate.swift in Sources */,
+				2F81C4962D8C98D200881DAF /* NavigationSplitViewExamples.swift in Sources */,
 				2FBA6D0D2CFA7ECC00D5E573 /* ListsView.swift in Sources */,
 				018CA97A2BD9AD5300A5840B /* RespondingToEventsView.swift in Sources */,
 				0123670F2BCEB61100188404 /* UserInterfaceControlsView.swift in Sources */,
