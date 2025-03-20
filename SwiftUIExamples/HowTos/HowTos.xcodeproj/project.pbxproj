@@ -23,6 +23,7 @@
 		2F81C4922D8ADF8000881DAF /* NavTabAndGroupBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C4912D8ADF8000881DAF /* NavTabAndGroupBoxView.swift */; };
 		2F81C4942D8B20F800881DAF /* NavigationExamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C4932D8B20F800881DAF /* NavigationExamplesView.swift */; };
 		2F81C4962D8C98D200881DAF /* NavigationSplitViewExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C4952D8C98D200881DAF /* NavigationSplitViewExamples.swift */; };
+		2F81C4982D8CA34000881DAF /* AlertsAndMenusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81C4972D8CA33E00881DAF /* AlertsAndMenusView.swift */; };
 		2FBA6D0D2CFA7ECC00D5E573 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */; };
 		3A53F6062CE782E00093CF57 /* HandlingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53F6052CE782D40093CF57 /* HandlingState.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		2F81C4912D8ADF8000881DAF /* NavTabAndGroupBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabAndGroupBoxView.swift; sourceTree = "<group>"; };
 		2F81C4932D8B20F800881DAF /* NavigationExamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExamplesView.swift; sourceTree = "<group>"; };
 		2F81C4952D8C98D200881DAF /* NavigationSplitViewExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSplitViewExamples.swift; sourceTree = "<group>"; };
+		2F81C4972D8CA33E00881DAF /* AlertsAndMenusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsAndMenusView.swift; sourceTree = "<group>"; };
 		2FBA6D0C2CFA7EC700D5E573 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		3A53F6052CE782D40093CF57 /* HandlingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 				2F81C4912D8ADF8000881DAF /* NavTabAndGroupBoxView.swift */,
 				2F81C4932D8B20F800881DAF /* NavigationExamplesView.swift */,
 				2F81C4952D8C98D200881DAF /* NavigationSplitViewExamples.swift */,
+				2F81C4972D8CA33E00881DAF /* AlertsAndMenusView.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				2FBA6D0D2CFA7ECC00D5E573 /* ListsView.swift in Sources */,
 				018CA97A2BD9AD5300A5840B /* RespondingToEventsView.swift in Sources */,
 				0123670F2BCEB61100188404 /* UserInterfaceControlsView.swift in Sources */,
+				2F81C4982D8CA34000881DAF /* AlertsAndMenusView.swift in Sources */,
 				018CA99B2BDDE72600A5840B /* TapsAndGesturesView.swift in Sources */,
 				012DCB3E2BB5CCEF00FC3A17 /* ImagesShapesMediaView.swift in Sources */,
 				2F81C4922D8ADF8000881DAF /* NavTabAndGroupBoxView.swift in Sources */,

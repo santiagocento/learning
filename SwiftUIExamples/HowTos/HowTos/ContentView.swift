@@ -28,6 +28,7 @@ struct ContentView: View {
                 Row(name: "Containers", item: NavTabAndGroupBoxView())
                 Row(name: "Navigation", item: NavigationExamplesView())
                 Row(name: "NavigationSplitViews", item: NavigationSplitViewExamples())
+                Row(name: "Alerts and Menus", item: AlertsAndMenusView())
             }
             .navigationTitle("Examples")
         }
