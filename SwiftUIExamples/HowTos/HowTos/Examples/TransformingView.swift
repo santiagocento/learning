@@ -12,9 +12,13 @@ struct TransformingView: View {
     @State private var simple = false
     @State private var borders = false
     @State private var shadows = false
-    @State private var transforms = true
+    @State private var transforms = false
+    @State private var otherTransforms = true
     
+    @State private var progress = 0.2
+    @State private var text = ""
     @State private var phase = 0.0
+    @State private var isOn: Bool = false
     
     var body: some View {
         VStack {
@@ -23,6 +27,7 @@ struct TransformingView: View {
                 Toggle("Bordes", isOn: $borders)
                 Toggle("Shadows", isOn: $shadows)
                 Toggle("Transforms", isOn: $transforms)
+                Toggle("Other Transforms", isOn: $otherTransforms)
             }
             .gridCellColumns(2)
             
@@ -173,6 +178,82 @@ struct TransformingView: View {
                         .frame(width: 200, height: 100)
                     // la diferencia con clipshape es que aplica tambien la transparencia que tenga, tipo png
                         .mask(Text("Mascara").font(.largeTitle))
+                    
+                    HStack {
+                        Image(.perrito)
+                        Image(.perrito)
+                            .blur(radius: 2)
+                        Text("Texto blureado")
+                            .blur(radius: 2)
+                    }
+                    // Blend modes, .normal para que se vean los dos, el resto hace desaparecer partes o todo
+                    ZStack {
+                        Circle()
+                            .fill(.green)
+                            .frame(width: 80, height: 80)
+                            .offset(x: -10)
+                            .blendMode(.normal)
+                        Circle()
+                            .fill(.blue)
+                            .frame(width: 80, height: 80)
+                            .offset(x: 10)
+                            .blendMode(.colorBurn)
+                    }
+                    .frame(width: 100)
+                }
+                
+                if otherTransforms {
+                    HStack {
+                        Image(.perrito)
+                        
+                        Image(.perrito)
+                            .colorInvert()
+                        
+                        Image(.perrito)
+                            .colorMultiply(.red)
+                        
+                        Image(.perrito)
+                            .saturation(0.1)
+                        
+                        Image(.perrito)
+                            .contrast(0.5)
+                    }
+                    
+                    Button("Sarasa") {
+                        print("eh sarasa")
+                    }
+                    .buttonStyle(SaltarinButton())
+                    .padding()
+                    
+                    ProgressView(value: progress, total: 1.0)
+                        .progressViewStyle(RelojitoProgressStyle())
+                        .frame(width: 50, height: 50)
+                        .contentShape(.rect)
+                        .onTapGesture {
+                            if progress < 1.0 {
+                                withAnimation {
+                                    progress += 0.2
+                                }
+                            } else {
+                                progress = 0
+                            }
+                        }
+                    Toggle("Check check", isOn: $isOn)
+                        .toggleStyle(TildeToggleStyle())
+                    
+                    TextEditor(text: $text)
+                        .scrollContentBackground(.hidden)
+                        .background(.linearGradient(colors: [.white, .gray], startPoint: .leading, endPoint: .trailing))
+                        .frame(height: 50)
+                    
+                    // esconder el background usando .scrollContentBackground(.hidden)
+                    // si no lo ponemos, no se aplica el background despues
+                    List(0..<5) { i in
+                        Text("Ejemplo \(i)")
+                    }
+                    .scrollContentBackground(.hidden)
+                    .background(.indigo)
+                    .frame(height: 200)
                 }
             }
             .frame(maxWidth: .infinity)
@@ -189,4 +270,51 @@ struct TransformingView: View {
 
 #Preview {
     TransformingView()
+}
+
+
+struct SaltarinButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(.teal)
+            .foregroundColor(.black)
+            .clipShape(Capsule())
+            .scaleEffect(configuration.isPressed ? 1.2 : 1)
+            .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
+    }
+}
+
+struct RelojitoProgressStyle: ProgressViewStyle {
+    var strokeColor = Color.teal
+    var strokeWidth = 12.0
+
+    func makeBody(configuration: Configuration) -> some View {
+        let fractionCompleted = configuration.fractionCompleted ?? 0
+
+        return ZStack {
+            Circle()
+                .trim(from: 0, to: fractionCompleted)
+                .stroke(strokeColor, style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round))
+                .rotationEffect(.degrees(-90))
+        }
+    }
+}
+
+struct TildeToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button {
+            configuration.isOn.toggle()
+        } label: {
+            Label {
+                configuration.label
+            } icon: {
+                Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(configuration.isOn ? .teal : .secondary)
+                    .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
+                    .imageScale(.large)
+            }
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
 }
