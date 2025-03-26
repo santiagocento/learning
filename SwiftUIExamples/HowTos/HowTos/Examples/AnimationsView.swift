@@ -238,7 +238,6 @@ struct AnimationsView: View {
             }
             Spacer()
         }
-        
         .padding()
         .overlay {
             RoundedRectangle(cornerRadius: 12)

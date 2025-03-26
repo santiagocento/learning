@@ -33,6 +33,7 @@ struct ContentView: View {
                 Row(name: "Transofrming Views", item: TransformingView())
                 Row(name: "Drawing Views", item: DrawingView())
                 Row(name: "Animating Views", item: AnimationsView())
+                Row(name: "Composing Views", item: ComposingView())
             }
             .navigationTitle("Examples")
         }
